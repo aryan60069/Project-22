@@ -26,14 +26,13 @@ function setup() {
 	fairy.addAnimation("f",fairyImg);
 	fairy.scale = 0.3;
 
-    MyEngine = Engine.create();
+        MyEngine = Engine.create();
 	MyWorld = MyEngine.world;
 
 	starBody = Bodies.circle(650 , 30 , 5 , {restitution:0.5, isStatic:true});
 	World.add(MyWorld, starBody);
 	
 	Engine.run(MyEngine);
-	fairyVoice.play();
 }
 
 function draw() {
@@ -45,6 +44,8 @@ function draw() {
   if(star.y > 360 && starBody.position.y > 360){
 	  Body.setStatic(starBody , true);
   }
+	
+   fairyVoice.play();
 
   drawSprites();
 }
